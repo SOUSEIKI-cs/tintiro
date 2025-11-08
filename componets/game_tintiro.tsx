@@ -10,6 +10,8 @@ import dice_5 from "../public/diceimage/dice-5.svg"
 import dice_6 from "../public/diceimage/dice-6.svg"
 
 export default function GameTintiro({gamestartbool,member_num}:{gamestartbool:boolean,member_num:number}){
+  //今ターンが回ってきているプレイヤーがダイスを投げた回数↓
+  const [throwcount,setthrowcount]=useState(0);
   //今ターンが回ってきているプレイヤーの番号↓
   const [nowplayer,setnowplayer] = useState(1);
   //今出たダイスの出目
@@ -22,8 +24,6 @@ export default function GameTintiro({gamestartbool,member_num}:{gamestartbool:bo
   const [playerdicelevel,setplayerdicelevel]=useState<Array<number>>(Array(10).fill(0));
   //プレイヤーごとののこりHP↓
   const [playerhp,setplayerhp] = useState<Array<number>>(Array(10).fill(6000));
-  //今ターンが回ってきているプレイヤーがダイスを投げた回数↓
-  const [throwcount,setthrowcount]=useState(0);
   
   function nextPlayer(){
     setthrowcount(0);
@@ -56,22 +56,24 @@ export default function GameTintiro({gamestartbool,member_num}:{gamestartbool:bo
     }
   };
 
+  //返すものをオブジェクトにして、状態(シゴロなど)とダイスのレベルを一緒にする。
+  let level:number=0;
   const rollJudgement=():string=>{
     if(nowdice[0]===nowdice[1]&&nowdice[1]===nowdice[2]){
       if(nowdice[0]===1&&nowdice[1]===1&&nowdice[2]===1){
-        setnowdicelevel(6);
+        level=6;
         return "ピンゾロ";
       }
       if(nowdice[0]===0&&nowdice[1]===0&&nowdice[2]===0){
-        return "ジャッジメントダイス！";
+        return "運命のダイスロール！";
       }
       else{
-        setnowdicelevel(5);
+        level=5;
         return "ゾロ目";
       }
     }
     else if(nowdice[0]===nowdice[1]||nowdice[1]===nowdice[2]||nowdice[0]===nowdice[2]){
-      setnowdicelevel(3);
+      level=3;
       return `役あり`;
     }
     else if(nowdice.includes(1)&&nowdice.includes(2)&&nowdice.includes(3)){
@@ -93,7 +95,7 @@ export default function GameTintiro({gamestartbool,member_num}:{gamestartbool:bo
       <div>
         <Playernum playernownum={nowplayer} throwcount={throwcount}/>
         <Dicedisplay nowdice={nowdice}/>
-        <div className="ml-7 text-black text-center text-[1rem] bg-white w-[73vw] sm:w-[45vw] rounded-[1vw] my-[1vh]">{rollJudgement()}</div>
+        <div className="ml-7 text-black text-center text-[1rem] sm:text-[2rem] bg-white w-[73vw] sm:w-[45vw] rounded-[1vw] my-[1vh]">{rollJudgement()}</div>
         <div className="flex flex-row ml-6">
           <ThrowBtn throwcount={throwcount} throwDice={throwDice}/>
           <TurnEndBtn throwcount={throwcount} nextplayer={nextPlayer}/>
@@ -105,8 +107,8 @@ export default function GameTintiro({gamestartbool,member_num}:{gamestartbool:bo
 function Playernum({playernownum,throwcount}:{playernownum:number,throwcount:number}){
     return(
       <div className="flex flex-row">
-        <p className="ml-7 text-black text-center text-[1rem] bg-white w-[35vw] sm:w-[20vw] rounded-[1vw] my-[1vh]">player{throwcount}</p>
-        <p className="ml-7 text-black text-center text-[1rem] bg-white w-[35vw] sm:w-[20vw] rounded-[1vw] my-[1vh]">今振った回数{playernownum}</p>
+        <p className="ml-7 text-black text-center text-[1rem] sm:text-[2rem] bg-white w-[35vw] sm:w-[20vw] rounded-[1vw] my-[1vh]">player{throwcount}</p>
+        <p className="ml-7 text-black text-center text-[1rem] sm:text-[2rem] bg-white w-[35vw] sm:w-[20vw] rounded-[1vw] my-[1vh]">残り:{3-playernownum}</p>
       </div>
     );
 }
