@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TINTIRORIN
+これはチンチロリンをプレイできるWEBサイトです。<br/>チンチロリンと闇のゲームの人権ポイント式HPシステムを融合させたローカルルールを採用しています。
 
-## Getting Started
+## ゲームプレイ
 
-First, run the development server:
+1.  初期画面でプレイする人数を選択します。上限は10名です。(一緒ににダイスを振る順番を決めておいてください。)
+2.  "GO"ボタンを押し、ゲームを始めます。
+3.  ダイスロールフェーズが始まります。このフェーズでは先ほど決めた順番でサイコロを振ります。一人につき3回振ることができます。
+4.  保存する出目が決まったもしくは3回振ったら、"ターンエンド"ボタンをおしてターンエンドします。同じように手順3,4を全員分行います。
+5.  全員振り終わったら、ダイレクトアタックフェーズに入ります。このフェーズでは勝者が敗者にダメージを与えます。勝者は"執行"ボタンをおして敗者にダイレクトアタックをしましょう。
+6.  ダイレクトアタックが終了すると、またダイスロールフェーズに戻り、サイコロを振ります。このあとは手順3~5を生きている人が一人になるまで繰り返します。
+7.  生き残った一人がこのゲームを制した魔王です。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ダメージについて
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 使用技術
+<img src="https://img.shields.io/badge/-Node.js()-black.svg?logo=nodedotjs&logoColor=#5FA04E">
+<img src="https://img.shields.io/badge/-Next.js(16.0.1)-black.svg?logo=next.js&logoColor=white">
+<img src="https://img.shields.io/badge/-React(19.2.0)-black.svg?logo=react&logoColor=#61DAFB">
+<img src="https://img.shields.io/badge/-TS()-black.svg?logo=tsnode&logoColor=#3178C6">
+<img src="https://img.shields.io/badge/-tailwindcss()-black.svg?logo=tailwindcss&logoColor=#06B6D4">
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### AIについて
+三項演算子、コンポーネントの返り値について聞いた。
