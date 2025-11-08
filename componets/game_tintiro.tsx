@@ -183,8 +183,8 @@ function PlayerHpGauge({membernum,playerhp,playerdice,playerdicelevel}:{membernu
   let hpanddice=[]; 
   for(let playernumber:number=0;playernumber<membernum;playernumber++){
     if(playerhp[playernumber]>0){
-      let hpgauge=
-      <div className="flex flex-row gap-0.5 mx-[1vw]">
+      let hpgauge = Array(1).fill(null).map((_, index)=>
+      <div className="flex flex-row gap-0.5 mx-[1vw]" key={index}>
         <div className="flex flex-col justify-center">
           <pre className="text-5 sm:text-3">{(playernumber+1)===10?`${playernumber+1}`:` ${playernumber+1}`}:</pre>
         </div>
@@ -194,7 +194,7 @@ function PlayerHpGauge({membernum,playerhp,playerdice,playerdicelevel}:{membernu
         <div className="w-[20vw] sm:w-[17vw] flex flex-col justify-center">
           <pre className="text-5 sm:text-3">level:{playerdicelevel[playernumber]} {playerhp[playernumber]}</pre>
         </div>
-      </div>;
+      </div>);
       hpanddice.push(hpgauge);
     }
   }
@@ -202,12 +202,3 @@ function PlayerHpGauge({membernum,playerhp,playerdice,playerdicelevel}:{membernu
       hpanddice
     );
 }
-
-/*
-1.プレイヤー1と表示//
-2.サイコロを表示
-3.振るボタンを表示
-4.振るとサイコロが降られ、2秒後に静止、値が決定、振り直しbuttonとターンエンドボタンが表示される
-5.全員が降りおわると、勝者が敗者にダメージを与える。勝者が一人になるまで継続。
-6.勝者が一人になると終了。
-*/
