@@ -15,7 +15,7 @@ export default function GameMemberSetting({gamestartbool,setgamestartbool,member
     setgamestartbool(true);
     const playerhpbuffer=playerhp.slice();
     for(let index=0;index<membernum;index++){
-      playerhpbuffer[index]=500;
+      playerhpbuffer[index]=6000;
     }
     setplayerhp(playerhpbuffer);
   }
