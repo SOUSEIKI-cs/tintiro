@@ -15,7 +15,7 @@ export default function GameMemberSetting({gamestartbool,setgamestartbool,member
     setgamestartbool(true);
     const playerhpbuffer=playerhp.slice();
     for(let index=0;index<membernum;index++){
-      playerhpbuffer[index]=6000;
+      playerhpbuffer[index]=500;
     }
     setplayerhp(playerhpbuffer);
   }
@@ -38,7 +38,7 @@ export default function GameMemberSetting({gamestartbool,setgamestartbool,member
           </button>
         </div>
         <button className="overflow-hidden m-[1vw] w-[8vw] min-w-20 aspect-square bg-white rounded-[2vw] flex flex-col items-center justify-center hover:bg-[rgb(200,200,200)]" onClick={GoButton}>
-            <p className="text-black text-center border-none text-[clamp(10px,2rem,200px)]">GO</p>
+            <p className="text-black text-center border-none text-[clamp(10px,2rem,200px)] hover:bg-[rgb(200,200,200)]">GO</p>
         </button>
       </div>
     </div>
