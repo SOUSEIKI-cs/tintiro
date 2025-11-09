@@ -38,5 +38,7 @@
 <img src="https://img.shields.io/badge/-tailwindcss()-black.svg?logo=tailwindcss&logoColor=#06B6D4">
 
 ### AIについて
-三項演算子、コンポーネントの返り値について聞いた。<br>
+三項演算子、コンポーネントの返り値、バグ修正について聞いた。<br>
 [コンポーネントの返り値](https://chatgpt.com/g/g-8sPlJ64Gn-tiyatuto/c/690deba7-acf4-8322-8ac1-04a6f84935ff)
+[バグ修正](https://chatgpt.com/g/g-8sPlJ64Gn-tiyatuto/c/690ff110-3e2c-8321-b641-c221a97d86b5)
+[バグ修正](https://chatgpt.com/c/690ffe6f-0cd8-8320-b532-4c1e91fcb149)
