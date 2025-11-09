@@ -120,7 +120,7 @@ export default function GameTintiro({gamestartbool,membernum,setgameend,gameend,
             <DirectAttackBtn nowplayer={nowplayer} playerhp={playerhp} directattack={directattack} endattack={endattack}/>
           </div>
         </div>
-        <div className="flex flex-row gap-1 flex-wrap w-[75vw] sm:w-[37vw]">
+        <div className="flex flex-row gap-1 flex-wrap w-[77vw] sm:w-[25vw]">
           <PlayerHpGauge membernum={membernum} playerhp={playerhp} playerdice={playerdice} playerdicelevel={playerdicelevel}/>
         </div>
       </div>
