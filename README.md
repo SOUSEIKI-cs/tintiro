@@ -40,6 +40,6 @@
 
 ### AIについて
 三項演算子、コンポーネントの返り値、バグ修正について聞いた。<br>
-[コンポーネントの返り値](https://chatgpt.com/g/g-8sPlJ64Gn-tiyatuto/c/690deba7-acf4-8322-8ac1-04a6f84935ff)
-[バグ修正](https://chatgpt.com/g/g-8sPlJ64Gn-tiyatuto/c/690ff110-3e2c-8321-b641-c221a97d86b5)
-[バグ修正](https://chatgpt.com/c/690ffe6f-0cd8-8320-b532-4c1e91fcb149)
+[コンポーネントの返り値](https://chatgpt.com/share/69101a04-fd14-8002-8829-5d491498d817)
+[バグ修正](https://chatgpt.com/share/69101a1e-2968-8002-ac66-8756fc656687)
+[バグ修正](https://chatgpt.com/share/69101a40-ec30-800f-8296-344a7907ddfc)
